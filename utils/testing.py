@@ -27,6 +27,12 @@ wavfile.write('restored.wav', samplerate, resample)
 wavfile.write('restored_tenth.wav', samplerate, resample_tenth)
 wavfile.write('restored_three.wav', samplerate, resample_three)
 
+doublerate = samplerate*2
+halfrate = samplerate/2
+doublerate_samples = audioprocessing.resample_data(samples, samplerate, doublerate)
+halfrate_samples = audioprocessing.resample_data(samples, samplerate, halfrate)
+wavfile.write('original_{0}hz.wav'.format(doublerate), doublerate, doublerate_samples)
+wavfile.write('original_{0}hz.wav'.format(halfrate), halfrate, halfrate_samples)
 
 freqmat = audioprocessing.samples2freqmat(samples, framesize, step )
 restoration =  audioprocessing.freqmat2samples(freqmat,step,dtype=np.int16)

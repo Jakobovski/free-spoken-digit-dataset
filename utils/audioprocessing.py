@@ -9,6 +9,7 @@
 '''
 
 import numpy as np
+import audioop
 
 def stft(samples, framesize = 512,step = 16, windowfxn = np.hanning):
     '''
@@ -239,6 +240,38 @@ def trim_silence(samples, noise_threshold=150):
             break
 
     return samples[start:end+1]
+
+def resample_data(samples,samplerate,newrate,width=2):
+    '''
+    Resamples the given single channel audio samples with a new data rate.
+
+    Parameters:
+    -----------
+
+    samples : numpy.ndarray
+        the input audio samples to sample at another data rate
+
+    samplerate : int
+        the sample rate in hz of the input signal
+
+    newrate : int
+        the sample rate of the output signal in hz
+
+    width : int
+        default = 2
+        the sample width in byte.
+        1 = 8-bit samples
+        2 = 16-bit samples
+        ...
+
+    Returns:
+    --------
+
+    newsamples: numpy.ndarray
+        the input signal sampled at another data rate.
+    '''
+    #width is the sample width, number of bytes.
+    return np.fromstring(audioop.ratecv(samples,width,1, samplerate, newrate, None)[0],dtype='int16')
 
 
 def record_audio(TODO = 'TODO'): pass
