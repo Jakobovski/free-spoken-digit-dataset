@@ -101,4 +101,3 @@ def split_multiple_recordings_file(file_path, min_silence_duration=0.25, noise_t
     for idx, recording in enumerate(split_recordings):
         new_file_path = file_path.split('.')[0] + '_' + str(idx) + ".wav"
         scipy.io.wavfile.write(new_file_path, rate, recording)
-

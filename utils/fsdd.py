@@ -1,37 +1,65 @@
-from os import listdir
-from os.path import isfile, join
+import os
 from collections import defaultdict
-
+import PIL
 import numpy as np
 import scipy.io.wavfile
+import scipy.ndimage
 
 
 class FSDD:
+    """Summary
+
+    Attributes:
+        file_paths (TYPE): Description
+        recording_paths (TYPE): Description
+    """
 
     def __init__(self, data_dir):
-        """ Initializes the FSDD data helper which is used for fetching FSDD data.
+        """Initializes the FSDD data helper which is used for fetching FSDD data.
 
         :param data_dir: The directory where the audiodata is located.
         :return: None
+
+        Args:
+            data_dir (TYPE): Description
         """
-        self.recording_paths = defaultdict(list) # A cache
-        file_paths = [f for f in listdir(data_dir) if isfile(join(data_dir, f))]
+
+        # A dict containing lists of file paths, where keys are the label and vals.
+        self.recording_paths = defaultdict(list)
+        file_paths = [f for f in os.listdir(data_dir) if os.path.isfile(os.path.join(data_dir, f))]
+        self.file_paths = file_paths
 
         for digit in range(0, 10):
             # fetch all the file paths that start with this digit
-            digit_paths = [join(data_dir, f) for f in file_paths if f[0] == str(digit)]
+            digit_paths = [os.path.join(data_dir, f) for f in file_paths if f[0] == str(digit)]
             self.recording_paths[digit] = digit_paths
 
-    def get_random_recording(self, limit=None):
-        """ Gets a random recoridng from the dataset as a numpy array.
-        :param limit: a list that containes a subset of digits to sample from.
-        :returns a tuple containing the label and a numpy array of the audio.
+    @staticmethod
+    def get_spectrograms(data_dir=None):
         """
-        if limit is None:
-            limit = range(10)
 
-        # pick a random label
-        label = np.random.choice(limit)
-        file_path = np.random.choice(self.recording_paths[label])
-        rate, audio = scipy.io.wavfile.read(file_path)
-        return digit, audio
+        Args:
+            data_dir (string): Path to the directory containing the spectrograms.
+
+        Returns:
+            (spectrograms, labels): a tuple of containing lists of spectrograms images(as numpy arrays) and their corresponding labels as strings
+        """
+        spectrograms = []
+        labels = []
+
+        if data_dir is None:
+            data_dir = os.path.dirname(__file__) + '/../spectrograms'
+            print data_dir
+
+        file_paths = [f for f in os.listdir(data_dir) if os.path.isfile(os.path.join(data_dir, f)) and '.png' in f]
+
+        if len(file_paths) == 0:
+            raise Exception('There are no files in the spectrogram directory. Make sure to run the spectrogram.py before calling this function.')
+
+        for file_name in file_paths:
+            label = file_name[0]
+            spectrogram = scipy.ndimage.imread(data_dir + '/' + file_name, flatten=True).flatten()
+            spectrograms.append(spectrogram)
+            labels.append(label)
+
+        return spectrograms, labels

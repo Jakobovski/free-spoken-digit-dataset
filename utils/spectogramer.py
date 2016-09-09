@@ -40,7 +40,7 @@ def dir_to_spectrogram(audio_dir, spectrogram_dir, spectrogram_dimensions=(64, 6
 
     :param audio_dir: path of directory with audio files
     :param spectrogram_dir: path to save spectrograms
-    :param spectrogram_dimensions: tuple specifiying the dimensions in pixes of the created spectrogram. default:(64,64)
+    :param spectrogram_dimensions: tuple specifying the dimensions in pixes of the created spectrogram. default:(64,64)
     :param noverlap: See http://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.spectrogram.html
     :param cmap: the color scheme to use for the spectrogram. Defaults to 'gray_r'
     :return:
@@ -55,6 +55,6 @@ def dir_to_spectrogram(audio_dir, spectrogram_dir, spectrogram_dimensions=(64, 6
 
 
 if __name__ == '__main__':
-    audio_dir = "~/free-spoken-digit-dataset/recordings/"
-    spectrogram_dir = "~/free-spoken-digit-dataset/spectrograms/"
+    audio_dir = "/Users/Jackson/development/free-spoken-digit-dataset/recordings/"
+    spectrogram_dir = "/Users/Jackson/development/free-spoken-digit-dataset/spectrograms/"
     dir_to_spectrogram(audio_dir, spectrogram_dir)
