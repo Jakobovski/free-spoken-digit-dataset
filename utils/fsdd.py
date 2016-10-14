@@ -1,7 +1,5 @@
 import os
 from collections import defaultdict
-import PIL
-import numpy as np
 import scipy.io.wavfile
 import scipy.ndimage
 
