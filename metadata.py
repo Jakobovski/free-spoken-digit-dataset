@@ -5,5 +5,10 @@ metadata = {
         'gender': 'male',
         'accent': 'USA/neutral',
         'language': 'english'
+    },
+    'nicolas': {
+    	'gender': 'male',
+    	'accent': 'BE/French',
+    	'language': 'english'
     }
 }
