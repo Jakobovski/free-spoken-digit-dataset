@@ -33,3 +33,7 @@ The test set officially consists of the first 10% of the recordings. Recordings 
 
 ### Contributions
 Please contribute your homemade recordings. All recordings should be 8kHz `wav ` files and be trimmed to have minimal silence. Don't forget to update `metadata.py` with the speaker meta-data.
+
+
+### License
+Attribution-ShareAlike 4.0 International
