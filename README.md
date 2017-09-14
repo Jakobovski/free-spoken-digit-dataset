@@ -34,6 +34,12 @@ The test set officially consists of the first 10% of the recordings. Recordings 
 ### Contributions
 Please contribute your homemade recordings. All recordings should be 8kHz `wav ` files and be trimmed to have minimal silence. Don't forget to update `metadata.py` with the speaker meta-data.
 
+### Made with FSDD
+Did you use FSDD in a paper, project or app? Add it here!
+* [https://github.com/Jakobovski/decoupled-multimodal-learning](https://github.com/Jakobovski/decoupled-multimodal-learning)
+
+
+
 
 ### License
 [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
