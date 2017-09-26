@@ -10,5 +10,10 @@ metadata = {
     	'gender': 'male',
     	'accent': 'BE/French',
     	'language': 'english'
+    },
+    'theo': {
+    	'gender': 'male',
+    	'accent': 'USA/neutral',
+    	'language': 'english'
     }
 }
