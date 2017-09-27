@@ -2,11 +2,11 @@
 
 A simple audio/speech dataset consisting of recordings of spoken digits in `wav` files at 8kHz. The recordings are trimmed so that they have near minimal silence at the beginnings and ends.
 
-FSDD is an open dataset, which means it will grow overtime as data is contributed. Thus in order to enable reproducibility and accurate citation in scientific journals the dataset is versioned using `git tags`. 
+FSDD is an open dataset, which means it will grow over time as data is contributed. Thus in order to enable reproducibility and accurate citation in scientific journals the dataset is versioned using `git tags`.
 
 ### Current status
-- 2 speakers
-- 1,000 recordings (50 of each digit)
+- 3 speakers
+- 1,500 recordings (50 of each digit)
 - English pronunciations
 
 ### Organization
@@ -14,9 +14,14 @@ Files are named in the following format:
 `{digitLabel}_{speakerName}_{index}.wav`
 Example: `7_jackson_32.wav`
 
+### Contributions
+Please contribute your homemade recordings. All recordings should be 8kHz `wav ` files and be trimmed to have minimal silence. Don't forget to update `metadata.py` with the speaker meta-data.
+
+To add your data, follow the recording instructions in `acquire_data/say_numbers_prompt.py`
+and then run `split_and_label_numbers.py` to make your files.
+
 ### Metadata
 `metadata.py` contains meta-data regarding the speakers gender and accents. 
-
 
 ### Included utilities
 `trimmer.py`
@@ -29,16 +34,11 @@ A simple class that provides an easy to use API to access the data.
 Used for creating spectrograms of the audio data. Spectrograms are often a useful pre-processing step.
 
 ### Usage
-The test set officially consists of the first 10% of the recordings. Recordings numbered `0-4` (inclusive) are in the test and `5-49` are in the training set. 
-
-### Contributions
-Please contribute your homemade recordings. All recordings should be 8kHz `wav ` files and be trimmed to have minimal silence. Don't forget to update `metadata.py` with the speaker meta-data.
+The test set officially consists of the first 10% of the recordings. Recordings numbered `0-4` (inclusive) are in the test and `5-49` are in the training set.
 
 ### Made with FSDD
 Did you use FSDD in a paper, project or app? Add it here!
 * [https://github.com/Jakobovski/decoupled-multimodal-learning](https://github.com/Jakobovski/decoupled-multimodal-learning)
-
-
 
 
 ### License
