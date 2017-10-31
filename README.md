@@ -7,7 +7,7 @@ FSDD is an open dataset, which means it will grow over time as data is contribut
 
 ### Current status
 - 4 speakers
-- 2,000 recordings (50 of each digit)
+- 2,000 recordings (50 of each digit per speaker)
 - English pronunciations
 
 ### Organization
