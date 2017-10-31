@@ -15,5 +15,10 @@ metadata = {
     	'gender': 'male',
     	'accent': 'USA/neutral',
     	'language': 'english'
+    },
+    'jason': {
+    	'gender': 'male',
+    	'accent': 'USA/neutral',
+    	'language': 'english'
     }
 }
