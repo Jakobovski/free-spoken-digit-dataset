@@ -40,6 +40,7 @@ The test set officially consists of the first 10% of the recordings. Recordings 
 ### Made with FSDD
 Did you use FSDD in a paper, project or app? Add it here!
 * [https://github.com/Jakobovski/decoupled-multimodal-learning](https://github.com/Jakobovski/decoupled-multimodal-learning)
+* [https://adhishthite.github.io/sound-mnist/](sound-mnist) by Adhish Thite (https://adhishthite.github.io/)
 
 ### External tools
 - **C#/.NET.** The FSDD dataset can be used in .NET applications using the [FreeSpokenDigitsDataset class](http://accord-framework.net/docs/html/T_Accord_DataSets_FreeSpokenDigitsDataset.htm) included withing the Accord.NET Framework. A basic example on [how to perform spoken digits classification using audio MFCC features can be found here](http://accord-framework.net/docs/html/T_Accord_Audition_BagOfAudioWords.htm).
