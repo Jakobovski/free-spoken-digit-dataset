@@ -20,7 +20,7 @@ def wav_to_spectrogram(audio_path, save_path, spectrogram_dimensions=(64, 64), n
 
     sample_rate, samples = wav.read(audio_path)
 
-    plt.specgram(samples, cmap=cmap, noverlap=noverlap)
+    plt.specgram(samples, cmap=cmap, Fs=2, noverlap=noverlap)
     plt.axis('off')
     plt.tight_layout()
     plt.savefig(save_path, bbox_inches="tight", pad_inches=0)
