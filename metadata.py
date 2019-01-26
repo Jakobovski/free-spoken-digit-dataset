@@ -16,4 +16,10 @@ metadata = {
     	'accent': 'USA/neutral',
     	'language': 'english'
     }
+    },
+    'yweweler': {
+    	'gender': 'male',
+    	'accent': 'BE/German',
+    	'language': 'english'
+    }
 }
