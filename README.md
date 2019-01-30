@@ -6,8 +6,8 @@ A simple audio/speech dataset consisting of recordings of spoken digits in `wav`
 FSDD is an open dataset, which means it will grow over time as data is contributed. Thus in order to enable reproducibility and accurate citation in scientific journals the dataset is versioned using `git tags`.
 
 ### Current status
-- 3 speakers
-- 1,500 recordings (50 of each digit per speaker)
+- 4 speakers
+- 2,000 recordings (50 of each digit per speaker)
 - English pronunciations
 
 ### Organization
@@ -22,7 +22,7 @@ To add your data, follow the recording instructions in `acquire_data/say_numbers
 and then run `split_and_label_numbers.py` to make your files.
 
 ### Metadata
-`metadata.py` contains meta-data regarding the speakers gender and accents. 
+`metadata.py` contains meta-data regarding the speakers gender and accents.
 
 ### Included utilities
 `trimmer.py`
