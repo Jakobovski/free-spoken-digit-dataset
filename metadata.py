@@ -8,7 +8,7 @@ metadata = {
     },
     'nicolas': {
     	'gender': 'male',
-    	'accent': 'BE/French',
+    	'accent': 'BEL/French',
     	'language': 'english'
     },
     'theo': {
