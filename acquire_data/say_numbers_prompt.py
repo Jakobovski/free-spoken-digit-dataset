@@ -1,10 +1,11 @@
+from __future__ import print_function
 import time
 import math
 
 """
-Prompts you to say numbers. 
+Prompts you to say numbers.
 
-Start this, and then hit "Record" in Audacity. 
+Start this, and then hit "Record" in Audacity.
 http://www.audacityteam.org/download/
 When you start Audacity, look in the bottom-left and set the Project Rate (Hz) to 8000.
 
@@ -15,7 +16,7 @@ Tips:
 - Try a short recording session first to make sure everything works OK before doing the full recording.
 
 
-When done, export the audio as one big .wav file and use 'split_and_label_numbers.py' 
+When done, export the audio as one big .wav file and use 'split_and_label_numbers.py'
 to make the labeled dataset.
 """
 
@@ -43,22 +44,22 @@ def generate_number_sequence():
 def show_numbers():
     nums = generate_number_sequence()
 
-    print "Get ready..."
+    print("Get ready...")
     time.sleep(1)
 
     t_start = time.time()
     for i, num in enumerate(nums):
         if (float(i)/len(nums) * 100) % 10 == 0:
-            print "\n====", float(i)/len(nums)*100, "% done====\n"
+            print("\n====", float(i)/len(nums)*100, "% done====\n")
         else:
-            print ""
+            print("")
 
         t_next_display = t_start + (i + 1) * DELAY_BETWEEN_NUMBERS
         t_next_blank = t_next_display + 2.5
 
         # display a number
         wait_until(t_next_display)
-        print num
+        print(num)
 
         # blank
         wait_until(t_next_blank)

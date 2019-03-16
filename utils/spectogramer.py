@@ -1,4 +1,4 @@
-from __future__ import division
+from __future__ import division, print_function
 from os import listdir
 from os.path import isfile, join
 from wand.image import Image
@@ -48,7 +48,7 @@ def dir_to_spectrogram(audio_dir, spectrogram_dir, spectrogram_dimensions=(64, 6
     file_names = [f for f in listdir(audio_dir) if isfile(join(audio_dir, f)) and '.wav' in f]
 
     for file_name in file_names:
-        print file_name
+        print(file_name)
         audio_path = audio_dir + file_name
         spectogram_path = spectrogram_dir + file_name.replace('.wav', '.png')
         wav_to_spectrogram(audio_path, spectogram_path, spectrogram_dimensions=spectrogram_dimensions, noverlap=noverlap, cmap=cmap)
