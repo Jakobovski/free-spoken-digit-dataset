@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 from collections import defaultdict
 import scipy.io.wavfile
@@ -47,7 +48,7 @@ class FSDD:
 
         if data_dir is None:
             data_dir = os.path.dirname(__file__) + '/../spectrograms'
-            print data_dir
+            print(data_dir)
 
         file_paths = [f for f in os.listdir(data_dir) if os.path.isfile(os.path.join(data_dir, f)) and '.png' in f]
 
