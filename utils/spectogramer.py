@@ -20,17 +20,18 @@ def wav_to_spectrogram(audio_path, save_path, spectrogram_dimensions=(64, 64), n
 
     sample_rate, samples = wav.read(audio_path)
 
-    plt.specgram(samples, cmap=cmap, Fs=2, noverlap=noverlap)
-    plt.axis('off')
-    plt.tight_layout()
-    plt.savefig(save_path, bbox_inches="tight", pad_inches=0)
-    plt.tight_layout()
+    fig, ax = plt.suplots()
+    ax.specgram(samples, cmap=cmap, Fs=2, noverlap=noverlap)
+    ax.set_axis_off()
+    ax.xaxis.set_major_locator(plt.NullLocator())
+    ax.yaxis.set_major_locator(plt.NullLocator())
+    fig.savefig(save_path, bbox_inches="tight", pad_inches=0)
 
     # TODO: Because I cant figure out how to create a plot without padding
     # I am using `.trim()`, It would be better to do this in the plot itself.
     # Also probably better to do the sizing in the plot too.
     with Image(filename=save_path) as i:
-        i.trim()
+        #i.trim()
         i.resize(spectrogram_dimensions[0], spectrogram_dimensions[1])
         i.save(filename=save_path)
 
