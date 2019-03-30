@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 import scipy.io.wavfile as wav
 
 
-def wav_to_spectrogram(audio_path, save_path, spectrogram_dimensions=(64, 64), noverlap=16, cmap='grey_r'):
+def wav_to_spectrogram(audio_path, save_path, spectrogram_dimensions=(64, 64), noverlap=16, cmap='gray_r'):
     """ Creates a spectrogram of a wav file.
 
     :param audio_path: path of wav file
