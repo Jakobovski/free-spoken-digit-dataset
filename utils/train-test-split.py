@@ -2,7 +2,7 @@ import os
 from shutil import copyfile
 
 # As per README:
-# All files of iteration 0-4 move to testing-pectrograms
+# All files of iteration 0-4 move to testing-spectrograms
 # All files of iteration 5-49 move to training-spectrograms
 
 def separate(source):
