@@ -6,8 +6,8 @@ A simple audio/speech dataset consisting of recordings of spoken digits in `wav`
 FSDD is an open dataset, which means it will grow over time as data is contributed.  In order to enable reproducibility and accurate citation the dataset is versioned using Zenodo DOI as well as `git tags`.
 
 ### Current status
-- 4 speakers
-- 2,000 recordings (50 of each digit per speaker)
+- 5 speakers
+- 2,500 recordings (50 of each digit per speaker)
 - English pronunciations
 
 ### Organization
