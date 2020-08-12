@@ -25,5 +25,10 @@ metadata = {
         'gender': 'male',
         'accent': 'GRC/Greek',
         'language': 'english'
+    },
+    'lucas': {
+        'gender': 'male',
+        'accent': 'DEU/German',
+        'language': 'english'
     }
 }
