@@ -12,8 +12,18 @@ SPECTROGRAMS_DIR = "./spectrograms"
 WAVS_DIR = "./recordings"
 
 
+with open("README.md", encoding="utf-8") as f:
+    readme_description = f.read()
+
+
 if __name__ == "__main__":
     ds = hub.empty(DATASET_URI, overwrite=True)
+
+    ds.info.update({
+        "title": "Spoken Digit Dataset",
+        "citation": "https://github.com/Jakobovski/free-spoken-digit-dataset",
+        "description": readme_description,
+    })
 
     ds.create_tensor("spectrograms", htype="image", chunk_compression="png")
     ds.create_tensor("labels", htype="class_label")
