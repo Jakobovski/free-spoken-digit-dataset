@@ -52,6 +52,7 @@ class FSDD:
             print(data_dir)
 
         file_paths = [f for f in os.listdir(data_dir) if os.path.isfile(os.path.join(data_dir, f)) and '.png' in f]
+        file_paths = sorted(file_paths)
 
         if len(file_paths) == 0:
             raise Exception('There are no files in the spectrogram directory. Make sure to run the spectrogram.py before calling this function.')

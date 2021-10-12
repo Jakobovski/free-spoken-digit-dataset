@@ -1,32 +1,44 @@
+import os
 import numpy as np
 import hub
 from utils.fsdd import FSDD
 
+from tqdm import tqdm
+
 
 DATASET_URI = "./mnist_audio"
 
-
-def upload_spectrograms(ds):
-    ds.create_tensor("spectrograms/images", htype="image", chunk_compression="png")
-    ds.create_tensor("spectrograms/labels", htype="class_label")
-
-    with ds:
-        for _, label, file_path in FSDD.get_spectrograms("./spectrograms"):
-            spectrogram_sample = hub.read(file_path)
-            ds.spectrograms.images.append(spectrogram_sample)
-            ds.spectrograms.labels.append(np.uint32(label))
-
-            # TODO: unbreak
-            break
-
-
-def upload_audio(ds):
-    raise NotImplementedError
+SPECTROGRAMS_DIR = "./spectrograms"
+WAVS_DIR = "./recordings"
 
 
 if __name__ == "__main__":
     ds = hub.empty(DATASET_URI, overwrite=True)
 
-    upload_spectrograms(ds)
-    upload_audio(ds)
+    ds.create_tensor("spectrograms", htype="image", chunk_compression="png")
+    ds.create_tensor("labels", htype="class_label")
+    ds.create_tensor("audio", htype="audio", sample_compression="wav")
+    ds.create_tensor("speakers", htype="text")
+
+    with ds:
+        gen = FSDD.get_spectrograms(SPECTROGRAMS_DIR)
+        num = len(os.listdir(SPECTROGRAMS_DIR))
+
+        for _, label, spectrogram_path in tqdm(gen, total=num, desc="uploading to hub"):
+            filename_no_ext = os.path.basename(spectrogram_path).split(".")[0]
+            speaker_name = filename_no_ext.split("_")[1]
+
+            wav_path = os.path.join(WAVS_DIR, filename_no_ext + ".wav")
+
+            if not os.path.exists(wav_path):
+                raise Exception("Missing audio file: {}".format(wav_path))
+
+            ds.spectrograms.append(hub.read(spectrogram_path))
+            ds.audio.append(hub.read(wav_path))
+            ds.labels.append(np.uint32(label))
+            ds.speakers.append(str(speaker_name))
+
+    print(f'dataset was successfully uploaded to {DATASET_URI}.')
+    print(ds)
+
     
