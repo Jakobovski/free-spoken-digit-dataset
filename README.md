@@ -16,7 +16,7 @@ Files are named in the following format:
 Example: `7_jackson_32.wav`
 
 ### Contributions
-Please contribute your homemade recordings. All recordings should be mono 8kHz `wav ` files and be trimmed to have minimal silence. Don't forget to update `metadata.py` with the speaker meta-data.
+Please contribute your homemade recordings. All recordings should be mono 8kHz `wav` files and be trimmed to have minimal silence. Don't forget to update `metadata.py` with the speaker meta-data.
 
 To add your data, follow the recording instructions in `acquire_data/say_numbers_prompt.py`
 and then run `split_and_label_numbers.py` to make your files.
@@ -39,13 +39,15 @@ The test set officially consists of the first 10% of the recordings. Recordings 
 
 ### Made with FSDD
 Did you use FSDD in a paper, project or app? Add it here!
-* [https://github.com/Jakobovski/decoupled-multimodal-learning](https://github.com/Jakobovski/decoupled-multimodal-learning)
-* [https://adhishthite.github.io/sound-mnist/](sound-mnist) by Adhish Thite (https://adhishthite.github.io/)
-* [https://github.com/eonu/torch-fsdd](https://github.com/eonu/torch-fsdd) - A simple PyTorch data loader for the dataset (by [Edwin Onuonga](https://github.com/eonu)).
+* https://github.com/Jakobovski/decoupled-multimodal-learning/
+* https://adhishthite.github.io/sound-mnist/ by [Adhish Thite](https://adhishthite.github.io/)
+* https://github.com/eonu/torch-fsdd/ - A simple PyTorch data loader for the dataset by [Edwin Onuonga](https://github.com/eonu)
+* https://proglearn.neurodata.io/ by [NeuroData](https://github.com/neurodata)
+* https://neurodata.io/df_dn/ by [NeuroData](https://github.com/neurodata)
 
 ### External tools
 - **Tensorflow** https://www.tensorflow.org/datasets/catalog/spoken_digit
-- **C#/.NET.** The FSDD dataset can be used in .NET applications using the [FreeSpokenDigitsDataset class](http://accord-framework.net/docs/html/T_Accord_DataSets_FreeSpokenDigitsDataset.htm) included withing the Accord.NET Framework. A basic example on [how to perform spoken digits classification using audio MFCC features can be found here](http://accord-framework.net/docs/html/T_Accord_Audition_BagOfAudioWords.htm).
+- **C#/.NET.** The FSDD dataset can be used in .NET applications using the [FreeSpokenDigitsDataset class](http://accord-framework.net/docs/html/T_Accord_DataSets_FreeSpokenDigitsDataset.htm) included withing the Accord.NET Framework. A basic example on how to perform spoken digits classification using audio MFCC features can be found [here](http://accord-framework.net/docs/html/T_Accord_Audition_BagOfAudioWords.htm).
 
 ### License
 [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
