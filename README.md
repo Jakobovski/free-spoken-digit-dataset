@@ -11,14 +11,21 @@ You can get access to this dataset in 2 lines of code by using [activeloop](acti
 First, run `pip install hub` (or `pip3 install hub`). Then, use 
 
 ```python
-import hub                                          # required line 1
-ds = hub.load("hub://activeloop/spoken_mnist")      # required line 2
+import hub
+ds = hub.load("hub://activeloop/spoken_mnist")
 
-# check out the first spectrogram and who spoke it!
+# check out the first spectrogram, it's label, and who spoke it!
 import matplotlib.pyplot as plt
 plt.imshow(ds.spectrograms[0].numpy())
-plt.title(ds.speakers[0].data())
+plt.title(f"{ds.speakers[0].data()} spoke {ds.labels[0].numpy()}")
 plt.show()
+```
+
+available tensors can be shown by printing dataset:
+
+```python
+print(ds)
+# prints: Dataset(path='hub://activeloop/spoken_mnist', tensors=['spectrograms', 'labels', 'audio', 'speakers'])
 ```
 
 For more information, check out the [hub documentation](https://docs.activeloop.ai/).
