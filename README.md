@@ -5,6 +5,24 @@ A simple audio/speech dataset consisting of recordings of spoken digits in `wav`
 
 FSDD is an open dataset, which means it will grow over time as data is contributed.  In order to enable reproducibility and accurate citation the dataset is versioned using Zenodo DOI as well as `git tags`.
 
+### How to use
+You can get access to this dataset in 2 lines of code by using [activeloop](activeloop.ai)'s python package [hub](https://github.com/activeloopai/Hub)!
+
+First, run `pip install hub` (or `pip3 install hub`). Then, use 
+
+```python
+import hub                                          # required line 1
+ds = hub.load("hub://activeloop/spoken_mnist")      # required line 2
+
+# check out the first spectrogram and who spoke it!
+import matplotlib.pyplot as plt
+plt.imshow(ds.spectrograms[0].numpy())
+plt.title(ds.speakers[0].data())
+plt.show()
+```
+
+For more information, check out the [hub documentation](https://docs.activeloop.ai/).
+
 ### Current status
 - 6 speakers
 - 3,000 recordings (50 of each digit per speaker)

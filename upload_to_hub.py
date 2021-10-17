@@ -7,6 +7,7 @@ from tqdm import tqdm
 
 
 DATASET_URI = "./mnist_audio"
+# DATASET_URI = "hub://activeloop/spoken_mnist"
 
 SPECTROGRAMS_DIR = "./spectrograms"
 WAVS_DIR = "./recordings"
