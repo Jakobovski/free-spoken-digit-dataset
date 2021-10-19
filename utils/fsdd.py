@@ -3,6 +3,7 @@ import os
 from collections import defaultdict
 import scipy.io.wavfile
 import scipy.ndimage
+from PIL import Image
 
 
 class FSDD:
@@ -51,14 +52,13 @@ class FSDD:
             print(data_dir)
 
         file_paths = [f for f in os.listdir(data_dir) if os.path.isfile(os.path.join(data_dir, f)) and '.png' in f]
+        file_paths = sorted(file_paths)
 
         if len(file_paths) == 0:
             raise Exception('There are no files in the spectrogram directory. Make sure to run the spectrogram.py before calling this function.')
 
         for file_name in file_paths:
+            file_path = data_dir + '/' + file_name
+            spectrogram = Image.open(file_path)
             label = file_name[0]
-            spectrogram = scipy.ndimage.imread(data_dir + '/' + file_name, flatten=True).flatten()
-            spectrograms.append(spectrogram)
-            labels.append(label)
-
-        return spectrograms, labels
+            yield spectrogram, label, file_path

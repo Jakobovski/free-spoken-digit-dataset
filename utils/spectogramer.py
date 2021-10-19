@@ -1,3 +1,4 @@
+import os
 from __future__ import division, print_function
 from os import listdir
 from os.path import isfile, join
@@ -50,6 +51,6 @@ def dir_to_spectrogram(audio_dir, spectrogram_dir, spectrogram_dimensions=(64, 6
 
 
 if __name__ == '__main__':
-    audio_dir = "/Users/Jackson/development/free-spoken-digit-dataset/recordings/"
-    spectrogram_dir = "/Users/Jackson/development/free-spoken-digit-dataset/spectrograms/"
+    audio_dir = "./recordings/"
+    spectrogram_dir = "./spectrograms/"
     dir_to_spectrogram(audio_dir, spectrogram_dir)
