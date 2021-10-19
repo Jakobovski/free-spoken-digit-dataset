@@ -6,7 +6,7 @@ A simple audio/speech dataset consisting of recordings of spoken digits in `wav`
 FSDD is an open dataset, which means it will grow over time as data is contributed.  In order to enable reproducibility and accurate citation the dataset is versioned using Zenodo DOI as well as `git tags`.
 
 ### How to use with Hub
-The recommended way of accessing this dataset is via [activeloop](activeloop.ai)'s python package [hub](https://github.com/activeloopai/Hub)!
+A simple way of using this dataset is with [activeloop](activeloop.ai)'s python package [hub](https://github.com/activeloopai/Hub)!
 
 First, run `pip install hub` (or `pip3 install hub`). 
 
