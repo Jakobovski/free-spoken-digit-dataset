@@ -5,6 +5,17 @@ A simple audio/speech dataset consisting of recordings of spoken digits in `wav`
 
 FSDD is an open dataset, which means it will grow over time as data is contributed.  In order to enable reproducibility and accurate citation the dataset is versioned using Zenodo DOI as well as `git tags`.
 
+### Current status
+- 6 speakers
+- 3,000 recordings (50 of each digit per speaker)
+- English pronunciations
+
+### Organization
+Files are named in the following format:
+`{digitLabel}_{speakerName}_{index}.wav`
+Example: `7_jackson_32.wav`
+
+
 ### How to use with Hub
 A simple way of using this dataset is with [Activeloop](https://activeloop.ai)'s python package [Hub](https://github.com/activeloopai/Hub)!
 
@@ -37,16 +48,6 @@ print(ds)
 ```
 
 For more information, check out the [hub documentation](https://docs.activeloop.ai/).
-
-### Current status
-- 6 speakers
-- 3,000 recordings (50 of each digit per speaker)
-- English pronunciations
-
-### Organization
-Files are named in the following format:
-`{digitLabel}_{speakerName}_{index}.wav`
-Example: `7_jackson_32.wav`
 
 ### Contributions
 Please contribute your homemade recordings. All recordings should be mono 8kHz `wav` files and be trimmed to have minimal silence. Don't forget to update `metadata.py` with the speaker meta-data.
