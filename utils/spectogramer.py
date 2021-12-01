@@ -1,5 +1,5 @@
-import os
 from __future__ import division, print_function
+import os
 from os import listdir
 from os.path import isfile, join
 
