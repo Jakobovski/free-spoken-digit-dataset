@@ -73,6 +73,7 @@ The test set officially consists of the first 10% of the recordings. Recordings 
 
 ### Made with FSDD
 Did you use FSDD in a paper, project or app? Add it here!
+* [More than 50+ scholarly articles](https://scholar.google.com/citations?hl=en&user=OAJpVUkAAAAJ)
 * https://github.com/Jakobovski/decoupled-multimodal-learning/
 * https://adhishthite.github.io/sound-mnist/ by [Adhish Thite](https://adhishthite.github.io/)
 * https://github.com/eonu/torch-fsdd/ - A simple PyTorch data loader for the dataset by [Edwin Onuonga](https://github.com/eonu)
