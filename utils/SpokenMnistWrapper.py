@@ -21,6 +21,7 @@ class SpokenMnistWrapper:
 
     def __init__(self):
         self.dataset = hub.load("hub://activeloop/spoken_mnist")
+        self.sampling_rate = 8000 # All recordings should be mono 8kHz
 
     def get_audio_from_index(self, index):
         """
